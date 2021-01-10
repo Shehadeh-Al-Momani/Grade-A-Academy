@@ -29,21 +29,6 @@ const Chat = (props) => {
     }
   })
 
-  useEffect(() => {
-    getUser()
-  }, [id]);
-
-  const getUser = () => {
-    axios.get(`/chat/users/${id}`)
-      .then((res) => {
-        console.log('res.data :', res.data)
-        setUser(res.data);
-      })
-      .catch((err) => {
-        console.log('ERR: ', err);
-      })
-  }
-
   return (
     <div className='chat-room-container'>
       <h1 className='room-name'> {user}</h1>

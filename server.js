@@ -1,20 +1,16 @@
 const express = require("express");
 require("dotenv").config();
 const cors = require("cors");
-const http = require('http');
 const app = express();
-const socketio = require('socket.io');
-const server = http.createServer(app);
 const path = require('path'); 
-
-// We adde cors.origin because cors work with express not socket.io so to solve this proplem we write this commmand
-const io = socketio(server, {
-  cors: {
-    origin: '*',
-  }
-});
+const socketio = require('socket.io');
 
 app.use(express.static(path.join(__dirname, 'client/build')));
+
+// const server = require('http').createServer(app);
+
+// We adde cors.origin because cors work with express not socket.io so to solve this proplem we write this commmand
+const io = socketio(require('http').createServer(app), { cors: { origin: '*' } });
 
 const mainRouter = require("./routes/main-route");
 const db = require("./db");
@@ -43,6 +39,6 @@ io.on("connection", (socket) => {
 
 const PORT = process.env.PORT || 5000;
 
-server.listen(PORT, () => {
+app.listen(PORT, () => {
   console.log(`listening at http://localhost:${PORT}`);
 });

@@ -9,8 +9,7 @@ const { visiblityCourse, addCourse, updateCourse, registeredCoursesInstructor, a
 const { courseRating } = require('./instructors_controllers/rating_controllers');
 const { instructors_details, instructor_details } = require('./admin_controllers/instructors_controllers');
 const { addCategory } = require('./admin_controllers/categories_controllers');
-const { newMesseges, getMesseges, getUsers } = require('./integration_controllers');
-
+ 
 module.exports = {
   getAllCourses,
   courseDetails,
@@ -37,9 +36,6 @@ module.exports = {
   getAllCoursesByInstructor,
   getInstructor,
   getAllCoursesInstructorsCategories,
-  getOneCourseInstructorsCategories,
-  newMesseges,
-  getMesseges,
-  getUsers
+  getOneCourseInstructorsCategories, 
 };
 
