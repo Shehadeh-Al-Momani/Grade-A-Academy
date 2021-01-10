@@ -8,7 +8,7 @@ export default function Courses() {
   const [courses, setCourses] = useState();
   useEffect(() => {
     axios
-      .get("/instructors/courses", {
+      .get("/instructorsRouter/courses", {
         headers: { authorization: token },
       })
       .then((res) => {

@@ -12,7 +12,7 @@ const Courses = () => {
 	}, [])
 
 	const getAllCourses = () => {
-		axios.get(`/students/allCourses`)
+		axios.get(`/studentsRouter/allCourses`)
 			.then((response) => {
 				console.log('setAllCourses :', response.data)
 				setAllCourses(response.data);

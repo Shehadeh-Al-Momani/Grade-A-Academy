@@ -10,7 +10,7 @@ const Disable = () => {
     }
 
     const disableUser = () => {
-        axios.put(`/admin/disable`, { name })
+        axios.put(`/adminRouter/disable`, { name })
         alert('User is BANNED')
     }
     return (

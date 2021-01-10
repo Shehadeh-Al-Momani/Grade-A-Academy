@@ -10,7 +10,7 @@ const AddCategory = () => {
     };
 
     const addCat = () => {
-        axios.post('/admin/category', { name });
+        axios.post('/adminRouter/category', { name });
         alert('Category Added');
     };
 

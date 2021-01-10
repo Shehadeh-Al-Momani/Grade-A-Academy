@@ -8,7 +8,7 @@ export default function Lesson() {
 
   useEffect(() => {
     axios
-      .get("/instructors/lessons")
+      .get("/instructorsRouter/lessons")
       .then((res) => {
         setLessons(res.data);
       })

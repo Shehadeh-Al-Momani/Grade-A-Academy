@@ -12,7 +12,7 @@ const authentication = (req, res, next) => {
   });
 };
 
-//Admin permission middleware
+//adminRouter permission middleware
 const adminPermission = (req, res, next) => {
   const token = res.headers('x-auth');
   jwt.verify(token, process.env.SECRET), (err, result) => {

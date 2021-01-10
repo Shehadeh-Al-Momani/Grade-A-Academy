@@ -12,7 +12,7 @@ export default function AddNewCourse() {
     const data = new FormData();
     data.append("file", selectedFile);
     axios
-      .post("/instructors/uploadVideo", data, {})
+      .post("/instructorsRouter/uploadVideo", data, {})
       .then((res) => { });
   };
 
@@ -23,7 +23,7 @@ export default function AddNewCourse() {
     const video_path = "public/video/" + e.target[1].files[0].name;
     console.log(video_path);
     axios
-      .post("/instructors/lesson", {
+      .post("/instructorsRouter/lesson", {
         name: e.target[0].value,
         video_url: video_path,
         course_id: option,
@@ -35,7 +35,7 @@ export default function AddNewCourse() {
 
   useEffect(() => {
     axios
-      .get("/instructors/courses")
+      .get("/instructorsRouter/courses")
       .then((res) => {
         setCourses(res.data);
         console.log(res.data);

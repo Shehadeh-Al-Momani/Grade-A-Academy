@@ -23,7 +23,7 @@ const Login = () => {
 
     const login = (email, password) => {
         axios
-            .post(`/registration/login`, { email, password })
+            .post(`/registrationRouter/loginRouter`, { email, password })
             .then((res) => {
                 if (res.data === 'Invalid Email or password..') {
                     setlogErr(true);

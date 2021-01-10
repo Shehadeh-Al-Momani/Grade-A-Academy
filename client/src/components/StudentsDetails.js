@@ -7,7 +7,7 @@ const StudentsDetails = () => {
 	const [users, setUsers] = useState([]);
 	useEffect(() => { getStudentsDetails() }, []);
 	const getStudentsDetails = () => {
-		axios.get('/admin/students_details')
+		axios.get('/adminRouter/students_details')
 			.then((res) => {
 				console.log('res.data :', res.data)
 				setUsers(res.data);

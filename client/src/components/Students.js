@@ -7,7 +7,7 @@ const Students = () => {
 	const [users, setUsers] = useState([]);
 	useEffect(() => { getStudentsDetails() }, []);
 	const getStudentsDetails = () => {
-		axios.get('/instructors/students_details')
+		axios.get('/instructorsRouter/students_details')
 			.then((res) => {
 				setUsers(res.data);
 			})
@@ -25,7 +25,7 @@ const Students = () => {
 					</div>
 				))
 			}
-			<button className='log' onClick={() => history.push('/admin')}> Home</button>
+			<button className='log' onClick={() => history.push('/adminRouter')}> Home</button>
 		</div>
 	);
 };

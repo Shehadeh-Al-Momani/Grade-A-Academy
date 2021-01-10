@@ -20,7 +20,7 @@ export default function Account() {
     const decoded = jwt_decode(localStorage.getItem("token"));
     axios
       .put(
-        `/instructors/update_instructor/{decoded.id}`,
+        `/instructorsRouter/update_instructor/{decoded.id}`,
         body
       )
       .then((res) => { })
@@ -31,10 +31,10 @@ export default function Account() {
   useEffect(() => {
     const decoded = jwt_decode(localStorage.getItem("token"));
     console.log(
-      "/instructors/instructor_details/" + decoded.id
+      "/instructorsRouter/instructor_details/" + decoded.id
     );
     axios
-      .get("/instructors/instructor_details/" + decoded.id)
+      .get("/instructorsRouter/instructor_details/" + decoded.id)
       .then((res) => {
         setUserName(res.data[0].name);
         setAddress(res.data[0].adress);

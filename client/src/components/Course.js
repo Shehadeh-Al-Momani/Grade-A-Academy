@@ -12,7 +12,7 @@ const Course = ({ match: { params: { id }, }, }) => {
 
 	useEffect(() => {
 		axios
-			.get(`/students/course/${id}`, {
+			.get(`/studentsRouter/course/${id}`, {
 				headers: { authorization: token },
 			})
 			.then((res) => {
@@ -24,7 +24,7 @@ const Course = ({ match: { params: { id }, }, }) => {
 	}, [id]);
 
 	useEffect(() => {
-		axios.get(`/students/history/${stuId}`)
+		axios.get(`/studentsRouter/history/${stuId}`)
 			.then((res) => {
 				setEnrollmentCourses(res.data);
 			})

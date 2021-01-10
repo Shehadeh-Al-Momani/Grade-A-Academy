@@ -10,7 +10,7 @@ const CategoryCourses = (props) => {
 	const [token, setToken] = LocalStorage('token', '');
 
 	useEffect(() => {
-		axios.get(`/students/category_courses/${id}`, { headers: { authorization: token }, })
+		axios.get(`/studentsRouter/category_courses/${id}`, { headers: { authorization: token }, })
 			.then((res) => {
 				setAllCourses(res.data);
 			})

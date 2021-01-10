@@ -13,7 +13,7 @@ export default function AddNewCourse() {
   const [isDisable, setIsDisable] = useState("No");
   useEffect(() => {
     axios
-      .get("/instructors/categories")
+      .get("/instructorsRouter/categories")
       .then((res) => {
         setCategorys(res.data);
       })
@@ -24,7 +24,7 @@ export default function AddNewCourse() {
     const data = new FormData();
     data.append("file", selectedFile);
     axios
-      .post("/instructors/upload", data, {})
+      .post("/instructorsRouter/upload", data, {})
       .then((res) => { });
   };
 
@@ -37,7 +37,7 @@ export default function AddNewCourse() {
     const decoded = jwt_decode(localStorage.getItem("token"));
     console.log(decoded.id);
     axios
-      .post("/instructors/course", {
+      .post("/instructorsRouter/course", {
         name: e.target[0].value,
         price: e.target[1].value,
         description: e.target[2].value,
