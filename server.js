@@ -19,6 +19,10 @@ app.use(cors());
 app.use(express.json());
 app.use(mainRouter);
 
+app.get('/test', (req, res) => {
+  res.json('Hello World Server');
+});
+
 app.post('/messeges', (req, res) => {
   const { stuID, insID, message, sender } = req.body;
   const query = 'INSERT INTO messeges (stuID, insID, message, sender,created_at) VALUES (?,?,?,?,?)';
@@ -61,7 +65,7 @@ io.on("connection", (socket) => {
   });
 });
 
-const PORT = 5000 || process.env.PORT;
+const PORT = process.env.PORT || 5000;
 
 server.listen(PORT, () => {
   console.log(`listening at http://localhost:${PORT}`);
