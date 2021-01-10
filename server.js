@@ -15,10 +15,6 @@ const io = socketio(require('http').createServer(app), { cors: { origin: '*' } }
 const mainRouter = require("./routes/main-route");
 const db = require("./db");
 
-app.use(cors());
-app.use(express.json());
-app.use(mainRouter);
-
 app.get('/test', (req, res) => {
   res.json('Hello World Server');
 });
@@ -36,6 +32,10 @@ io.on("connection", (socket) => {
     socket.leave(insID);
   });
 });
+
+app.use(cors());
+app.use(express.json());
+app.use(mainRouter);
 
 const PORT = process.env.PORT || 5000;
 
