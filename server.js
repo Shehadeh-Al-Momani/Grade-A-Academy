@@ -4,9 +4,17 @@ const cors = require("cors");
 const app = express();
 const path = require('path');
 const socketio = require('socket.io');
+const favicon = require("serve-favicon");
+const logger = require("morgan");
+
+app.use(logger("dev"));
 
 app.use(express.static(path.join(__dirname, 'client/build')));
+// app.use(favicon(path.join(__dirname, "client/build", "favicon.ico")));
 
+app.get("/*", function (req, res) {
+res.sendFile(path.join(__dirname, "client/build", "index.html"));
+});
 // const server = require('http').createServer(app);
 
 // We adde cors.origin because cors work with express not socket.io so to solve this proplem we write this commmand
@@ -38,7 +46,7 @@ app.use(express.json());
 app.use(mainRouter);
 
 const PORT = process.env.PORT || 5000 || 80;
-const HOST = '0.0.0.0';
+const HOST = process.env.HOST || '0.0.0.0' || 'localhost';
 
 app.listen(PORT, HOST, () => {
   console.log(`listening at http://localhost:${PORT}`);
