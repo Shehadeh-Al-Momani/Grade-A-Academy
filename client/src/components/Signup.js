@@ -74,7 +74,8 @@ const signup=(name,email,adress,password,phone,confPassword)=>{
             
             </div>
             <div className="is-sign">
-                <p>Have an account?</p><a href="http://localhost:3000/login">Log In</a>
+                <p>Have an account?</p> 
+                <a onClick={() => history.push('/login')}> Log In </a>
             </div>   
         </div>
         

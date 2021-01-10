@@ -1,4 +1,4 @@
-const db = require('../../db');
+const db = require('../db');
 
 const newMesseges = (req, res) => {
     const { stuID, insID, message, sender } = req.body;

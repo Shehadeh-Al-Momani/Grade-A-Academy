@@ -27,7 +27,6 @@ app.get('/test', (req, res) => {
   res.json('Hello World Server');
 });
 
-
 io.on("connection", (socket) => {
   const { insID, stuId } = socket.handshake.query;
   // Join a conversation 

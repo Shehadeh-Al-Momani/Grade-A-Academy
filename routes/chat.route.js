@@ -7,6 +7,5 @@ chatRouter.get('/:stuID/:insID', getMesseges)
 
 chatRouter.get('/users/:id', getUsers)
 
-
-module.exports = studentsRouter;
+module.exports = chatRouter;
 

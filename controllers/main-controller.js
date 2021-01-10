@@ -4,7 +4,6 @@ const { getAllCourses, courseDetails, searchCourses, filterCourses, historyCours
 const { getAllCategories, getCategoryCourses } = require('./students_controllers/categories_controllers');
 const { evaluate, getRating } = require('./students_controllers/rating_controllers');
 const { getAllInstructors, getAllCoursesByInstructor, getInstructor } = require('./students_controllers/instructors_controllers');
-const { } = require('./students_controllers/integration_controllers');
 const { students_details, disable_user } = require('./admin_controllers/students_controllers');
 const { visiblityCourse, addCourse, updateCourse, registeredCoursesInstructor, addLesson } = require('./instructors_controllers/courses_controllers');
 const { courseRating } = require('./instructors_controllers/rating_controllers');
