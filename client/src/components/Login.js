@@ -29,7 +29,7 @@ const Login = () => {
                     setlogErr(true);
                 } else {
                     setToken(res.data)
-                    const decoded = jwt_decode(res.data);
+                    const decoded = jwt_decode(token);
                     if (decoded.role_id === 3) {
                         history.push('/students');
                         window.location.reload();
