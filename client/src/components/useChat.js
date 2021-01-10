@@ -8,7 +8,7 @@ const useChat = (newMessage, stuId, insID, cuurentUser) => {
   const [oneMessage, setMessage] = useState([]);
 
   useEffect(() => {
-    axios.get(`/${stuId}/${insID}`)
+    axios.get(`/chat/${stuId}/${insID}`)
       .then((res) => {
         setMessages(res.data);
       });
@@ -21,7 +21,7 @@ const useChat = (newMessage, stuId, insID, cuurentUser) => {
     socket.on('newMessage', (message) => {
       const incomingMessage = { ...message, sender: (message.senderId === socket.id) ? 1 : 0 };
       setMessage(message);
-      axios.post('/messeges', incomingMessage)
+      axios.post('/chat/messeges', incomingMessage)
         .then((res) => {
           messages.push(incomingMessage)
           setMessages((messages) => [...messages, incomingMessage]);

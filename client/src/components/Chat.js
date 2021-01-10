@@ -34,7 +34,7 @@ const Chat = (props) => {
   }, [id]);
 
   const getUser = () => {
-    axios.get(`/users/${id}`)
+    axios.get(`/chat/users/${id}`)
       .then((res) => {
         console.log('res.data :', res.data)
         setUser(res.data);

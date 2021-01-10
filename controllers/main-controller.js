@@ -1,6 +1,6 @@
 const db = require("../db");
 
-const { getAllCourses, courseDetails, searchCourses, filterCourses, historyCourses, enrollmentCourse, getAllCoursesInstructorsCategories ,getOneCourseInstructorsCategories } = require('./students_controllers/courses_controllers');
+const { getAllCourses, courseDetails, searchCourses, filterCourses, historyCourses, enrollmentCourse, getAllCoursesInstructorsCategories, getOneCourseInstructorsCategories } = require('./students_controllers/courses_controllers');
 const { getAllCategories, getCategoryCourses } = require('./students_controllers/categories_controllers');
 const { evaluate, getRating } = require('./students_controllers/rating_controllers');
 const { getAllInstructors, getAllCoursesByInstructor, getInstructor } = require('./students_controllers/instructors_controllers');
@@ -10,6 +10,7 @@ const { visiblityCourse, addCourse, updateCourse, registeredCoursesInstructor, a
 const { courseRating } = require('./instructors_controllers/rating_controllers');
 const { instructors_details, instructor_details } = require('./admin_controllers/instructors_controllers');
 const { addCategory } = require('./admin_controllers/categories_controllers');
+const { newMesseges, getMesseges, getUsers } = require('./integration_controllers');
 
 module.exports = {
   getAllCourses,
@@ -38,5 +39,8 @@ module.exports = {
   getInstructor,
   getAllCoursesInstructorsCategories,
   getOneCourseInstructorsCategories,
+  newMesseges,
+  getMesseges,
+  getUsers
 };
 
