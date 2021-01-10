@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import logo from './pics/logo.png';
 import axios from 'axios';
-import { useHistory } from 'react-router-dom';
+import { Redirect, useHistory } from 'react-router-dom';
 import jwt_decode from 'jwt-decode';
 import { LocalStorage } from './LocalStorage';
 
@@ -78,7 +78,7 @@ const Login = () => {
             </div>
             <div className='not-sign'>
                 <p>Don't have an account?</p>
-                <a href='http://localhost:3000/signup'>Sign up</a>
+                <a onClick={() => history.push('/signup')}> Sign up </a>
             </div>
         </div>
     );
