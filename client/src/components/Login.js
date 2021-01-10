@@ -22,40 +22,29 @@ const Login = () => {
     };
 
     const login = (email, password) => {
-        // axios
-        //     .post(`/registration/login`, { email, password })
-        //     .then((res) => {
-        //         if (res.data === 'Invalid Email or password..') {
-        //             setlogErr(true);
-        //         } else {
-        //             setToken(res.data)
-        //             const decoded = jwt_decode(res.data);
-        //             if (decoded.role_id === 3) {
-        //                 history.push('/students');
-        //                 window.location.reload();
-        //             } else if (decoded.role_id === 2) {
-        //                 history.push('/instructors');
-        //                 window.location.reload();
-        //             } else if (decoded.role_id === 1) {
-        //                 history.push('/admin');
-        //                 window.location.reload();
-        //             }
-        //         }
-        //     })
-        //     .catch((err) => {
-        //         throw err;
-        //     });
-        const decoded = jwt_decode(res.data);
-        if (decoded.role_id === 3) {
-            history.push('/students');
-            window.location.reload();
-        } else if (decoded.role_id === 2) {
-            history.push('/instructors');
-            window.location.reload();
-        } else if (decoded.role_id === 1) {
-            history.push('/admin');
-            window.location.reload();
-        }
+        axios
+            .post(`/registration/login`, { email, password })
+            .then((res) => {
+                if (res.data === 'Invalid Email or password..') {
+                    setlogErr(true);
+                } else {
+                    setToken(res.data)
+                    const decoded = jwt_decode(res.data);
+                    if (decoded.role_id === 3) {
+                        history.push('/students');
+                        window.location.reload();
+                    } else if (decoded.role_id === 2) {
+                        history.push('/instructors');
+                        window.location.reload();
+                    } else if (decoded.role_id === 1) {
+                        history.push('/admin');
+                        window.location.reload();
+                    }
+                }
+            })
+            .catch((err) => {
+                throw err;
+            });
     };
 
     return (
