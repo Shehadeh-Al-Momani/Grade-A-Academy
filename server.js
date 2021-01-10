@@ -5,12 +5,16 @@ const http = require('http');
 const app = express();
 const socketio = require('socket.io');
 const server = http.createServer(app);
+const path = require('path'); 
+
 // We adde cors.origin because cors work with express not socket.io so to solve this proplem we write this commmand
 const io = socketio(server, {
   cors: {
     origin: '*',
   }
 });
+
+app.use(express.static(path.join(__dirname, 'client/build')));
 
 const mainRouter = require("./routes/main-route");
 const db = require("./db");

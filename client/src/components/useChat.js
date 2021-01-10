@@ -1,9 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from "axios";
 import io from 'socket.io-client';
-import jwt_decode from 'jwt-decode';
-let token = localStorage.getItem('token');
-const decoded = jwt_decode(token);
 let socket;
 
 const useChat = (newMessage, stuId, insID, cuurentUser) => {
