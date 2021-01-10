@@ -26,7 +26,8 @@ const login = (req, res) => {
                 };
                 //putting token to login account
                 token = jwt.sign(payload, process.env.SECRET, options);
-                res.header('x-auth', token).json(token);
+                res.json(token);
+                // res.header('x-auth', token).json(token);
             } else {
                 res.json("Invalid Email or password..");
             }
