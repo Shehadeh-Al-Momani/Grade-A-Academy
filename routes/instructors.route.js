@@ -41,7 +41,7 @@ const {
   getAllCategories,
   getAllCourses,
   getAllLessons,
-} = require("../controllers/adminRouter_controllers/instructors_controllers");
+} = require("../controllers/admin_controllers/instructors_controllers");
 
 // Show a hidden course
 instructorsRouter.put("/visiblity/:id", visiblityCourse);
