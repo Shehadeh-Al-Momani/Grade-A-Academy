@@ -12,7 +12,7 @@ const Course = ({ match: { params: { id }, }, }) => {
 
 	useEffect(() => {
 		axios
-			.get(`http://localhost:5000/students/course/${id}`, {
+			.get(`/students/course/${id}`, {
 				headers: { authorization: token },
 			})
 			.then((res) => {
@@ -24,7 +24,7 @@ const Course = ({ match: { params: { id }, }, }) => {
 	}, [id]);
 
 	useEffect(() => {
-		axios.get(`http://localhost:5000/students/history/${stuId}`)
+		axios.get(`/students/history/${stuId}`)
 			.then((res) => {
 				setEnrollmentCourses(res.data);
 			})
@@ -32,7 +32,7 @@ const Course = ({ match: { params: { id }, }, }) => {
 	}, [stuId]);
 
 	const enrollmentCourse = (id, i, course) => {
-		axios.post(`http://localhost:5000/students/add_course${id}/${i}`)
+		axios.post(`/students/add_course${id}/${i}`)
 			.then((res) => {
 				alert(`Thank you for enrollment ${course}`);
 			})

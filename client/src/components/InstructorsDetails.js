@@ -7,7 +7,7 @@ const InstructorsDetails = () => {
 	const [users, setUsers] = useState([]);
 	useEffect(() => { getInstructorsDetails() }, []);
 	const getInstructorsDetails = () => {
-		axios.get('http://localhost:5000/admin/instructors_details')
+		axios.get('/admin/instructors_details')
 			.then((res) => {
 				setUsers(res.data);
 			})

@@ -10,7 +10,7 @@ const AddCategory = () => {
     };
 
     const addCat = () => {
-        axios.post('http://localhost:5000/admin/category', { name });
+        axios.post('/admin/category', { name });
         alert('Category Added');
     };
 

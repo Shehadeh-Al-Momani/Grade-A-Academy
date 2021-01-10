@@ -26,7 +26,7 @@ const passMatch=(password,confPassword)=>{
     }
 }
 const signup=(name,email,adress,password,phone,confPassword)=>{
-    axios.post(`http://localhost:5000/registration/register/${role}`,{name,email,adress,password,phone,confPassword})
+    axios.post(`/registration/register/${role}`,{name,email,adress,password,phone,confPassword})
         .then((response)=>{
             if(response.data === "Email is used.."){
                 setemailErr(true)

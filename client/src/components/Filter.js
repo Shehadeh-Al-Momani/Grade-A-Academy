@@ -20,7 +20,7 @@ const Filter = () => {
 	}, [])
 
 	const getEnrollmentCourses = () => {
-		axios.get(`http://localhost:5000/students/history/${id}`)
+		axios.get(`/students/history/${id}`)
 			.then((response) => {
 				setEnrollmentCourses(response.data);
 			})
@@ -28,7 +28,7 @@ const Filter = () => {
 	};
 
 	const getAllInstructors = () => {
-		axios.get(`http://localhost:5000/students/instructors/2`)
+		axios.get(`/students/instructors/2`)
 			.then((response) => {
 				setAllInstructors(response.data);
 			})
@@ -37,7 +37,7 @@ const Filter = () => {
 
 	const getAllCategories = () => {
 		axios
-			.get(`http://localhost:5000/students/categories`)
+			.get(`/students/categories`)
 			.then((response) => {
 				setCategories(response.data);
 			})

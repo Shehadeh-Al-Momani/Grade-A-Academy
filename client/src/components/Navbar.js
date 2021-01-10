@@ -9,7 +9,7 @@ const Navbar = (props) => {
 
 	const getAllCategories = () => {
 		axios
-			.get(`http://localhost:5000/students/categories`)
+			.get(`/students/categories`)
 			.then((response) => {
 				setCategories(response.data);
 			})
@@ -17,7 +17,7 @@ const Navbar = (props) => {
 	};
 
 	const resultSearched = (i) => {
-		axios.get(`http://localhost:5000/students/search/${i}`)
+		axios.get(`/students/search/${i}`)
 			.then((res) => {
 				props.setKey(i)
 				props.setResult(res.data);

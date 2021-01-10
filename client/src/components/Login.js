@@ -23,7 +23,7 @@ const Login = () => {
 
     const login = (email, password) => {
         axios
-            .post(`http://localhost:5000/registration/login`, { email, password })
+            .post(`/registration/login`, { email, password })
             .then((res) => {
                 if (res.data === 'Invalid Email or password..') {
                     setlogErr(true);

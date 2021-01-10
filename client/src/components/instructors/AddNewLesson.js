@@ -12,8 +12,8 @@ export default function AddNewCourse() {
     const data = new FormData();
     data.append("file", selectedFile);
     axios
-      .post("http://localhost:5000/instructors/uploadVideo", data, {})
-      .then((res) => {});
+      .post("/instructors/uploadVideo", data, {})
+      .then((res) => { });
   };
 
   const handleSubmit = (e) => {
@@ -23,24 +23,24 @@ export default function AddNewCourse() {
     const video_path = "public/video/" + e.target[1].files[0].name;
     console.log(video_path);
     axios
-      .post("http://localhost:5000/instructors/lesson", {
+      .post("/instructors/lesson", {
         name: e.target[0].value,
         video_url: video_path,
         course_id: option,
       })
-      .then((res) => {})
-      .catch((err) => {});
+      .then((res) => { })
+      .catch((err) => { });
     e.preventDefault();
   };
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/instructors/courses")
+      .get("/instructors/courses")
       .then((res) => {
         setCourses(res.data);
         console.log(res.data);
       })
-      .catch((err) => {});
+      .catch((err) => { });
   }, []);
   const onNameChange = (value) => {
     setName(value);

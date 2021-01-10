@@ -20,21 +20,21 @@ export default function Account() {
     const decoded = jwt_decode(localStorage.getItem("token"));
     axios
       .put(
-        `http://localhost:5000/instructors/update_instructor/{decoded.id}`,
+        `/instructors/update_instructor/{decoded.id}`,
         body
       )
-      .then((res) => {})
-      .catch((err) => {});
+      .then((res) => { })
+      .catch((err) => { });
     e.preventDefault();
   };
 
   useEffect(() => {
     const decoded = jwt_decode(localStorage.getItem("token"));
     console.log(
-      "http://localhost:5000/instructors/instructor_details/" + decoded.id
+      "/instructors/instructor_details/" + decoded.id
     );
     axios
-      .get("http://localhost:5000/instructors/instructor_details/" + decoded.id)
+      .get("/instructors/instructor_details/" + decoded.id)
       .then((res) => {
         setUserName(res.data[0].name);
         setAddress(res.data[0].adress);

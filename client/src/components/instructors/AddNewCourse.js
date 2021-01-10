@@ -13,19 +13,19 @@ export default function AddNewCourse() {
   const [isDisable, setIsDisable] = useState("No");
   useEffect(() => {
     axios
-      .get("http://localhost:5000/instructors/categories")
+      .get("/instructors/categories")
       .then((res) => {
         setCategorys(res.data);
       })
-      .catch((err) => {});
+      .catch((err) => { });
   }, []);
   const onChangeHandler = (e) => {
     setSelectedFile(e.target.files[0]);
     const data = new FormData();
     data.append("file", selectedFile);
     axios
-      .post("http://localhost:5000/instructors/upload", data, {})
-      .then((res) => {});
+      .post("/instructors/upload", data, {})
+      .then((res) => { });
   };
 
   const handleSubmit = (e) => {
@@ -37,7 +37,7 @@ export default function AddNewCourse() {
     const decoded = jwt_decode(localStorage.getItem("token"));
     console.log(decoded.id);
     axios
-      .post("http://localhost:5000/instructors/course", {
+      .post("/instructors/course", {
         name: e.target[0].value,
         price: e.target[1].value,
         description: e.target[2].value,
@@ -45,12 +45,12 @@ export default function AddNewCourse() {
         category_id: option,
         img_url: image_path,
       })
-      .then((res) => {})
-      .catch((err) => {});
+      .then((res) => { })
+      .catch((err) => { });
     e.preventDefault();
   };
 
-  useEffect(() => {}, []);
+  useEffect(() => { }, []);
   const onNameChange = (value) => {
     setName(value);
   };

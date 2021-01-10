@@ -10,7 +10,7 @@ const TopCategories = () => {
 	}, []);
 	const getTopCategory = () => {
 		axios
-			.get('http://localhost:5000/students/categories', {
+			.get('/students/categories', {
 				headers: { authorization: token },
 			})
 			.then((res) => {

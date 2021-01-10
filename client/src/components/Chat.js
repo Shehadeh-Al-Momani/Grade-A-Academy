@@ -1,4 +1,4 @@
-import React, { useState, useEffect,useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import axios from "axios";
 import jwt_decode from 'jwt-decode';
 import './Chat.css';
@@ -33,9 +33,8 @@ const Chat = (props) => {
     getUser()
   }, [id]);
 
-  console.log('id :', id)
   const getUser = () => {
-    axios.get(`http://localhost:5000/users/${id}`)
+    axios.get(`/users/${id}`)
       .then((res) => {
         console.log('res.data :', res.data)
         setUser(res.data);

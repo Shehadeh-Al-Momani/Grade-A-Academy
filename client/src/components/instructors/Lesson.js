@@ -8,11 +8,11 @@ export default function Lesson() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/instructors/lessons")
+      .get("/instructors/lessons")
       .then((res) => {
         setLessons(res.data);
       })
-      .catch((err) => {});
+      .catch((err) => { });
   }, []);
   return (
     <Router>

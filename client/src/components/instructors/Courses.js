@@ -8,11 +8,11 @@ export default function Courses() {
   const [courses, setCourses] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:5000/instructors/courses")
+      .get("/instructors/courses")
       .then((res) => {
         setCourses(res.data);
       })
-      .catch((err) => {});
+      .catch((err) => { });
   }, []);
   return (
     <Router>

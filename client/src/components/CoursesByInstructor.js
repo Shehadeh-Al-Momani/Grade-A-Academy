@@ -18,7 +18,7 @@ const AllCourses = (props) => {
 	}, [id])
 
 	const getAllCoursesByInstructor = () => {
-		axios.get(`http://localhost:5000/students/instructor_courses/${id}`, { headers: { authorization: token }, })
+		axios.get(`/students/instructor_courses/${id}`, { headers: { authorization: token }, })
 			.then((response) => {
 				setAllCourses(response.data);
 			})
@@ -26,7 +26,7 @@ const AllCourses = (props) => {
 	};
 
 	const getInstructor_datails = () => {
-		axios.get(`http://localhost:5000/students/instructor_datails/${id}`, { headers: { authorization: token }, })
+		axios.get(`/students/instructor_datails/${id}`, { headers: { authorization: token }, })
 			.then((response) => {
 				console.log('response.data :', response.data)
 				setDetails(...response.data);
